@@ -8,6 +8,7 @@ class BasicCache(BaseCaching):
     """A child class Basecaching with simple cache methods"""
 
     def __init__(self):
+        """Constructor method"""
         super().__init__(self, self.cache_data)
 
     def put(self, key, item):
