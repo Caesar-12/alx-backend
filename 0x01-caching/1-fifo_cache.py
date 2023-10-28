@@ -15,7 +15,9 @@ class FIFOCache(BaseCaching):
         """Modified put method"""
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            discarded = self.cache_data.popitem(last=False)
+            for key in self.cache_data.keys():
+                discarded = self.cache_data.pop(key)
+                break
             print("DICARD: {}".format(discarded[0]))
         if not key or not item:
             return
