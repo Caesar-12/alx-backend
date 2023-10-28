@@ -7,10 +7,6 @@ from BaseCaching import BaseCaching
 class BasicCache(BaseCaching):
     """A child class Basecaching with simple cache methods"""
 
-    def __init__(self):
-        """Constructor method"""
-        super().__init__(self, self.cache_data)
-
     def put(self, key, item):
         """Simple cache method to add an item"""
         if not key or not item:
@@ -19,7 +15,7 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         """Simple retrieve cache method"""
-        if not key or not self.cache_data[key]:
-            return None
-        else:
+        try:
             return self.cache_data[key]
+        except KeyError:
+            return None
