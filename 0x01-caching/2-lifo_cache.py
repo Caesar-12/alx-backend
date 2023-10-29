@@ -25,7 +25,7 @@ class LIFOCache(BaseCaching):
                 return
             else:
                 self.cache_data.pop(self.last_in)
-                print("DICARD: {}".format(self.last_in))
+                print("DISCARD: {}".format(self.last_in))
         self.cache_data[key] = item
         self.last_in = key
 

@@ -26,7 +26,7 @@ class FIFOCache(BaseCaching):
                     rem_key = keys
                     del self.cache_data[keys]
                     break
-                print("DICARD: {}".format(rem_key))
+                print("DISCARD: {}".format(rem_key))
         self.cache_data[key] = item
 
     def get(self, key):
