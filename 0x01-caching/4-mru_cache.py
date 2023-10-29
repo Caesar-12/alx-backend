@@ -23,9 +23,9 @@ class MRUCache(BaseCaching):
                 self.key_order.insert(-1, key)
                 return
             else:
-                self.cache_data.pop(self.key_order[-1])
-                print("DISCARD: {}".format(self.key_order[-1]))
-                self.key_order.pop(-1)
+                self.cache_data.pop(self.key_order[0])
+                print("DISCARD: {}".format(self.key_order[0]))
+                self.key_order.pop(0)
         self.cache_data[key] = item
         self.key_order.insert(-1, key)
 
