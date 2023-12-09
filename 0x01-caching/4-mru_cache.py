@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Contains the child class LRUCcache"""
+"""Contains the child class MRUCcache"""
 from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """A child class of BaseCaching that uses the LRU algorithm"""
+    """A child class of BaseCaching that uses the MRU algorithm"""
 
     def __init__(self):
         self.key_order = []

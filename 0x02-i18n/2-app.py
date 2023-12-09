@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flask babel"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, _locale_selector
+from flask_babel import *
 
 
 class Config(Babel):
@@ -26,5 +26,4 @@ def welcome():
 @babel.localeselector
 def get_locale():
     """deterine best match"""
-    return _locale_selector.best_match(app.config['LANGUAGES'],
-                                       request.accept_languages)
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
